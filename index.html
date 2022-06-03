@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的音乐</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/music_style.css" rel="stylesheet" />
+	</head>
+
+	<body id="load_app">
+		<!--主体-->
+		<div class="music_app" id="load_music">
+			<!--头部-->
+			<div class="nva_box" id="bottn_nva">
+				<nva class="music_nva">
+					<a class="nva_b  nva_botton" href="javascript:;">推荐</a>
+					<a class="nva_b" href="javascript:;">排行榜</a>
+					<a class="nva_b" href="javascript:;">搜索</a>
+				</nva>
+			</div>
+			<!--导航栏-->
+
+			<!--模块容器-->
+			<div id="music_box" >
+
+				<!--推荐模块-->
+				<div class="music_display display_box">
+
+					<!--轮播图-->
+					<div class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<!--支持循环，需要重复图片节点-->
+							<div class="mui-slider-item mui-slider-item-duplicate" id="img_4"></div>
+							<div class="mui-slider-item" id="img0"></div>
+							<div class="mui-slider-item" id="img1"></div>
+							<div class="mui-slider-item" id="img2"></div>
+							<div class="mui-slider-item" id="img3"></div>
+							<div class="mui-slider-item" id="img4"></div>
+							<!--支持循环，需要重复图片节点-->
+							<div class="mui-slider-item mui-slider-item-duplicate" id="img_0"></div>
+						</div>
+						<!--轮播图小圆点-->
+						<p class="slider_img">
+							<b class="img_i  music_active"></b>
+							<b class="img_i "></b>
+							<b class="img_i "></b>
+							<b class="img_i "></b>
+							<b class="img_i "></b>
+						</p>
+					</div>
+
+					<!--电台-->
+					<div class="music_radio">
+						<h2 class="radio_h2">电台</h2>
+						<div class="radio_box">
+							<!--第一部分-->
+							<div class="box_link">
+								<a class="link_a" href="#">
+									<div class="a_box" id="radio_img">
+
+										<span class="a_box_span  icon_play"></span>
+									</div>
+									<div class="a_box2" id="img1_h3"></div>
+
+								</a>
+							</div>
+							<!--第二部分-->
+							<div class="box_link2">
+								<a class="link_a" href="#">
+									<div class="a_box" id="radio_img2">
+										<span class="a_box_span  icon_play"></span>
+									</div>
+									<div class="a_box2" id="img2_h3"></div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!--热门歌单-->
+					<div class="music_menu">
+						<h2 class="menu_h2">热门歌单</h2>
+						<div class="menu_ul" id="menu_arr"></div>
+
+					</div>
+				</div>
+
+				<!--排行榜-->
+				<div class="music_display" id="none_p">
+					<div class="music_list">
+						<ul id="get_topic"></ul>
+					</div>
+				</div>
+
+				<!--搜索-->
+				<div class="music_display">
+					<div class="input_box">
+						<div class="box_s">
+							<form id="inpot" method="get" action="#" onsubmit="return false;" autocomplete="off">
+								<input class="box_input" type="text" id="myInput" placeholder="搜索歌曲、歌单、专辑" />
+								<span class="icons mui-icon mui-icon-search "></span>
+								<span class="icon_clear mui-icon mui-icon-close" id="mx"></span>
+							</form>
+						</div>
+						<div id="claer">取消</div>
+					</div>
+
+					<!--热门标题-->
+					<div class="hot_header" id="hot_sw">
+						<h3 class="hot_h3">热门标题</h3>
+						<div class="hot_tags" id="hot_arr"></div>
+					</div>
+
+					<!--搜索结果-->
+					<div class="content_list">
+						<ul class="usr_list" id="list_id" style="display: none"></ul>
+					</div>
+				</div>
+
+				<!--排行榜歌单列表-->
+				<div id="music_list">
+					<div id="header_box">
+						<span class="mui-icon mui-icon-back" id="bottn_a"></span>
+						<span id="bottn_b">歌单</span>
+						<span class="mui-icon mui-icon-bars" id="bottn_c"></span>
+						
+					</div>
+					<div class="header_name" id="num_txet"></div>
+					<!--歌单列表-->
+					<ul class="list_box" id="data_arr"></ul>
+				</div>
+
+			</div>
+
+			<!--底部播放部分-->
+			<div id="bottom_play">
+				<a href="javascript:;" class="ft_info" id="bottomx">
+					<div class="ft_left">
+						<img id="getImg" src="img/m1.jpg" />
+					</div>
+					<div class="ft_center">
+						<p id="music_name">爱你一万年</p>
+						<p id="music_singer">周杰伦</p>
+					</div>
+				</a>
+				<div class="ft_right">
+					<i class="download" id="music_c"></i>
+					<i class="music_Play" id="music_a"></i>
+					<i class="Play_Next" id="music_b"></i>
+				</div>
+			</div>
+		</div>
+
+		<div class="mask_box">
+		<!--《音乐播放UI模块》虚化背景-->
+		<div class="mask" id="mask2">
+			<div class="mask_layer" id="mask_img"></div>
+			<div class="mask_layer2"></div>
+
+			<!--播放模块部分-->
+			<div class="play">
+
+				<!--播放主题页面-->
+				<div id="music_ui">
+
+					<!--歌曲名字标题-->
+					<div id="ui_header">
+						<p id="musicName">慢慢想起你</p>
+						<p id="singer_name">— 周杰伦 —</p>
+						<div id="return"><i></i></div> 
+					</div>
+					<!--歌曲专辑图片-->
+					<div class="music_img" id="img_s">
+						<div id="img_id">
+							<img id="singer_img" src="img/mxz.jpg" />
+						</div>
+						<!--歌曲歌词-->
+						<div class="music_lrc" id="musicx">
+							<div id="lrc">
+								<p class="s_100">今天、主人不要在家！</p>
+							</div>	
+						</div>
+
+						<!--歌曲播放模块-->
+						<div class="play_console">
+							<div class="time-wrap">
+								<div class="play_begin" id="mu_s">00:00</div>
+								<div class="progress-wrap">
+									<div class="progress_box" id="pro_s">
+										<!--进度成-->
+										<div id="pro_s2"></div>
+										<div class="progress">
+											<div id="pro_box">
+												<div id="sm_s">
+													<div id="s_ms"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="play_end " id="ms">00:00</div>
+							</div>
+							<div class="play_botton">
+								<i class="music_1" id="bottn_a2"></i>
+								<i class="up_song" id = "play_a"></i>
+								<i class="play_music" id="play_b"></i>
+								<i class="down_song" id="play_c"></i>
+								<i class="music_ms" id="bottn_b2"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!--预加载-->
+		<div id="loadImg">
+			<img id="imga" src="img/p2.jpg" />
+		</div>
+		<audio id="musicDatas"></audio>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui_usr.js"></script>
+		<script src="js/music_sw.js"></script>
+		<script src="js/music_json.js"></script>
+		<script src="data/data_1.js"></script>
+	</body>
+
+</html>
